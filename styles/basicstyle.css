@@ -35,10 +35,8 @@ li:hover{
 img{
     margin-left: 20em;
 }
+
 * {
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.reportlist li {
-    font-size: large;
-}
