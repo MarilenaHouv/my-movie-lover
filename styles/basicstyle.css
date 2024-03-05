@@ -32,9 +32,16 @@ li{
     text-align: center;
     padding: 14px 16px;
 }
+a{
+    text-decoration: none;
+    color: #08415c;
+}
+
 li:hover{
     background-color: #8da98f;
 }
+
+
 .container{
     display: flex;
     justify-content: space-between;
