@@ -35,4 +35,10 @@ li:hover{
 img{
     margin-left: 20em;
 }
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
 
+.reportlist li {
+    font-size: large;
+}
