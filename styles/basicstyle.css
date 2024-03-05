@@ -9,6 +9,7 @@ footer{
 h1{
     color: #08415c; 
     background-color:  #A6B8A7;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 ul{
@@ -37,22 +38,11 @@ img{
 }
 
 * {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 
 
 @media (min-width: 500px) {
-    .wrapper {
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas:
-        "header  header"
-        "nav     nav"
-        "sidebar content"
-        "ad      footer";
-    }
-    nav ul {
-      display: flex;
-      justify-content: space-between;
-    }
+    
   }
