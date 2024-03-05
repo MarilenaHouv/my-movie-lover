@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
 header{
     background-color: #A6B8A7;
 } 
@@ -5,6 +11,7 @@ footer{
     background-color: #A6B8A7;
     margin-top: 1em;
     padding: 1em;
+    
 }
 h1{
     color: #08415c; 
