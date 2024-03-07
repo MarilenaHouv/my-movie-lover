@@ -19,14 +19,14 @@ h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-#navlist{
+.navlist{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #A6B8A7;
 }
-#navitem{
+.navitem{
     display: inline-block;
     color:white;
     text-align: center;
@@ -37,7 +37,7 @@ a{
     color: #08415c;
 }
 
-#navitem:hover{
+.navitem:hover{
     background-color: #8da98f;
 }
 
