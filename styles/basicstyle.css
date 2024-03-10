@@ -57,6 +57,12 @@ a{
 
 
 
-@media (min-width: 500px) {
-    
+@media (max-width: 500px) {
+    .navlist{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
   }
+  
