@@ -4,14 +4,14 @@ body {
     margin: 20px;
     min-height: 100vh;
 }
-header{
-    background-color: #A6B8A7;
-
-    
-    box-shadow: 0px 10px #69746d;
+#curved{
+    box-shadow: 10px 10px 5px #69746d;
 
     /* background-color: #fffb00; */
     border-radius: 12px;
+}
+header{
+    background-color: #A6B8A7;
 } 
 footer{
     background-color: #A6B8A7;
@@ -23,7 +23,6 @@ footer{
 h1{
     color: #08415c; 
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    border-radius: 12px;
 }
 
 .navlist{
