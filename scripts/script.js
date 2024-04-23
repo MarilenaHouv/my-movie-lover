@@ -1,21 +1,18 @@
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
-function submit(){
+async function submit(){
     console.log("hey");
     alert("WORK");
-    let x = document.getElementById("userinput");
-
+    let x = document.getElementById("userinput").value;
     if (x == ""){
-        alert("Type movie");
+        alert("Invalid, type a movie name");
         return false;
     }
-    // let query = "name=" + nameInput.value + "&" + "age=" + age.value; 
-    // let resp = await fetch("https://echo.zuplo.io/api?" + query);
-    // let respJSON = await resp.json();
-
-    // let data = JSON.stringify(respJSON, null, 2);
-    // output.textContent = data;
-    let xhr = $.get("http://api.giphy.com/v1/gifs/search?q={x}&api_key=7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4&limit=5&rating=pg");
-    xhr.done(function(data) { console.log("success got data", data); });
+    
+    let gifresp = await fetch(`http://api.giphy.com/v1/gifs/search?q=${x}&api_key=7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4&limit=5&rating=pg`);
+    let respjson = await gifresp.json();
+    // let datar = JSON.stringify(respjson);
+    //  console.log(datar.data[0].images.original.url);
+    document.getElementById("gifimg").src = respjson.data[0].images.original.url;
 
 }
 

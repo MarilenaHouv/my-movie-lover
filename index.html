@@ -22,14 +22,24 @@
     </nav>
   </header>
   <p> this is the body of the website</p>
-  <main>
-    <h2>Try me out!<br>Enter a movie name:</h2>
+  <main class="homemain">
+   
     <!-- implement a search bar -->
-    <div class="search-bar">
+    <div class="searchgif">
+      <h2>Try me out!<br>Enter a movie name:</h2>
+      
+      <div>
         <input id="userinput" type="text" placeholder="Search.." name="search">
         <button onclick="submit()" type="submit">SUBMIT</button> 
+      </div> 
+
+      <img id="gifimg" src="images\whiteimage.avif" alt="gif image" width="400px">
     </div>
-    <img src="images/man1-removebg-preview.png" alt="a picture of movie lover" id="mainimg">
+  
+    <div>
+    <img id="movielover" src="images/man1-removebg-preview.png" alt="a picture of movie lover">
+    </div>
+   
   </main>
   <footer>
     <p>Site created by Eleni Houvarda and Leo Torrijos</p>
