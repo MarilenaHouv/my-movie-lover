@@ -32,11 +32,5 @@ async function submit(){
       rrespjson = await reviewresp.json();
       let review = rrespjson.results[0].content;
       document.getElementById("speechbubble").textContent += review;
-      /*
-
-    fetch('https://api.themoviedb.org/3/movie/movie_id/reviews?language=en-US&page=1', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err)); */
 }
 
