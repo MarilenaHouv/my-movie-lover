@@ -43,7 +43,8 @@ h1{
 .navlist{
     list-style-type: none;
     margin: 0;
-    padding-left: 26em;
+    display: flex;
+    justify-content: center;
     padding-bottom: 1em;
     overflow: hidden;
     background-color: #A6B8A7;
@@ -92,12 +93,15 @@ a{
 
 
 /* different layout for size  */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .navlist{
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
+    }
+    h1 {
+        font-size: 50px;
     }
   }
   

@@ -24,7 +24,7 @@ async function submit(){
       let mrespjson = await movieresp.json();
       let title = mrespjson.results[0].title;
       let rating = Math.round(mrespjson.results[0].vote_average);
-      document.getElementById("speechbubble").textContent = "You chose the movie <" + title + ">" +". I give it a rating of " + rating + "/10!!!";
+      document.getElementById("speechbubble").textContent = "You chose the movie <" + title + ">" +". I give it a rating of " + rating + "/10!!! ";
     
       //make itt so we fetch a review with the same rating as the average, rn its just the first review? idk
 
