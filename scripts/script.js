@@ -22,7 +22,21 @@ async function submit(){
       //https://api.themoviedb.org/3/search/movie?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${shrek}&language=en-US
       let movieresp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${x}&language=en-US`, options);
       let mrespjson = await movieresp.json();
-      console.log(mrespjson);
+      let title = mrespjson.results[0].title;
+      let rating = Math.round(mrespjson.results[0].vote_average);
+      document.getElementById("speechbubble").textContent = "You chose the movie <" + title + ">" +". I give it a rating of " + rating + "/10!!!";
     
+      //make itt so we fetch a review with the same rating as the average, rn its just the first review? idk
+
+      let reviewresp = await fetch(`https://api.themoviedb.org/3/movie/${mrespjson.results[0].id}/reviews?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${x}&language=en-US`, options);
+      rrespjson = await reviewresp.json();
+      let review = rrespjson.results[0].content;
+      document.getElementById("speechbubble").textContent += review;
+      /*
+
+    fetch('https://api.themoviedb.org/3/movie/movie_id/reviews?language=en-US&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err)); */
 }
 
