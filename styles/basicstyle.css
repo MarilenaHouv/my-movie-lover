@@ -4,26 +4,29 @@ body {
     flex-direction: column;
     margin: 20px;
     min-height: 100vh;
+    background-color:#ffe7e72d;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 header{
     background-color: #A6B8A7;
     border-radius: 10px;
-    border-color: pink;
     box-shadow: 10px 10px 5px #69746d;
-    border-radius: 12px;
     padding: 1em;
 } 
+
 footer {
     background-color: #A6B8A7;
     margin-top: auto;
     padding: 1em;
     border-radius: 10px;
-    border-color: pink;
     box-shadow: 10px 10px 5px #69746d;
-    border-radius: 12px;
     
 }
+
 h1{
     color: #08415c; 
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -31,13 +34,12 @@ h1{
     display: flex;
     justify-content: center;
     font-size: 75px;
-    border-radius: 10px;
-    border-color: pink;
 }
 
 * {
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
+
 
 /* nav bar  */
 .navlist{
@@ -73,6 +75,7 @@ a{
 }
 
 .homemain{
+    /* main class */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -85,11 +88,66 @@ a{
     float: right;
 
 }
-
 #gifimg{
     display: flex;
     padding-top: 1em;
 }
+/* container for gif when you search */
+.searchgif, #speechdiv{
+    background-color:pink;
+    margin: 30px;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #69746d; 
+    
+}
+
+/* about page */
+.aboutmain{
+    /* main on about page */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;   
+}
+
+section{
+    margin: 3em;
+}
+
+.aboutrow{
+    /* switches flex to row direction */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 3em;
+    
+}
+
+li{
+    margin: 1.5em;
+}
+
+#aboutparagraph{
+    /* box for sections in about page */
+    background-color:#A6B8A7;
+    padding: 5em;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #69746d;     
+    display:block;
+    
+}
+
+/* about page button */
+  #contactbutton{
+    background-color: #08415c;
+    color: #FFE7E7;
+    padding: 0.5em;
+    border-radius: 10px;
+  }
+  #contactbutton:hover{
+    background-color: #1574a1;
+  }
 
 
 /* different layout for size  */
@@ -101,7 +159,7 @@ a{
         flex-direction: column;
     }
     h1 {
-        font-size: 50px;
+        font-size: 40px;
     }
   }
   

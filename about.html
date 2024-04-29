@@ -28,34 +28,63 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <figure>
-            <img src="/images/man.png" alt="THEMOVIELOVER">
 
-        </figure>
-        <h3>Hello! My name is..erm.. you guessed it: Movie Lover</h3>
-        <p>In this page I am gonna tell you a few things about myself. First as you all know I <em>LOVE</em>
-            movies<br>Below are a few more fun facts!</p>
-        <ul>
-            <li><em>Favorite movie:</em> Murder Mystery 2</li>
-            <li><em>Favorite website:</em> <a href="myanimelist.com">MyAnimeList.com</a></li>
-            <li><em>Favorite food:</em> Popcorn and sweet ropes</li>
-            <li><em>Favorite destination:</em> Where they filmed Star Wars</li>
-            <li><em>Favorte color:</em> Depends on the movie</li>
-        </ul>
-        <p>Overall I mostly just enjoy watching and rating movies. I would love to hear what movies you like and
-            give you my rating on them as well as a funny GIF to represent it.</p>
-        <hr>
-        <h3>
-            Now my creators will give you some information about themselves!!!
-        </h3>
-        <p>Hello! We are the creators of this website: Eleni and Leo<br> We made this website in 2024 for our
-            Application Development class (CS 343). We are both currently sophomore computer science majors at James
-            Madison University.This website is meant to use two databases and pull information from them to do
-            something fun. First we use the movie name given to retrieve the rating that movie has and return it
-            using Movie Lover. Afterwards we use that same movie name to get a GIF of the movie and make your day.
-        </p>
+    <main class="aboutmain">
+        
+        <section id= "introabout" class="aboutrow">
+            <div id="aboutparagraph">
+                <h3>Hello! My name is..erm.. you guessed it: Movie Lover</h3>
+                <p>In this page I am gonna tell you a few things about myself. First as you all know I <em>LOVE</em>
+                movies<br>Below are a few more fun facts! if you wish to give me feedback or just want to interact reach out to me and my owners!</p>
+                
+                <!-- LINKS -->
+                <a href="#aboutmovlov" id="contactbutton">Who I am</a>
+                <a href="#aboutowner" id="contactbutton">Creators</a>
+                <a href="contact.html" id="contactbutton">Contact me</a>    
+            </div>
+            <figure>
+                <img src="/images/man.png" alt="THEMOVIELOVER" width="500px" height="650px">
+            </figure>
+        </section>
+
+        <section id= "aboutmovlov">
+            <h2>WHO I AM</h2>
+                <div id="aboutparagraph"> 
+                    <div class="aboutrow">
+                        <ul>
+                            <h3>Fun Facts</h3>
+                            <li><b>Favorite movie:</b> Murder Mystery 2</li>
+                            <li><b>Favorite website:</b> <a href="myanimelist.com">MyAnimeList.com</a></li>
+                            <li><b>Favorite food:</b> Popcorn and sweet ropes</li>
+                            <li><b>Favorite destination:</b> Where they filmed Star Wars</li>
+                            <li><b>Favorite color:</b> Depends on the movie</li>
+                        </ul>
+                        <img src="images/whiteimage.avif" alt="murder mystery 2 gif">
+                    </div>
+                    <hr>
+                    <p>Overall I mostly just enjoy watching and rating movies. I would love to hear what movies you like and
+                        give you my rating on them as well as a funny GIF to represent it.</p>
+                </div>
+        </section>
+
+        <section id="aboutowner">
+            <h2>
+                ABOUT CREATORS
+            </h2>
+            <div id="aboutparagraph">
+                <img src="images/whiteimage.avif" alt="add drawing of me and you idk">
+                <hr>
+                <p>Hello! We are the creators of this website: Eleni and Leo<br> We made this website in 2024 for our
+                Application Development class (CS 343). We are both currently sophomore computer science majors at James
+                Madison University.This website is meant to use two databases and pull information from them to do
+                something fun. First we use the movie name given to retrieve the rating that movie has and return it
+                using Movie Lover. Afterwards we use that same movie name to get a GIF of the movie and make your day.
+                </p>
+            </div>
+        </section>
+
     </main>
+
     <footer>
         <p>Site created by Eleni Houvarda and Leo Torrijos</p>
     </footer>
