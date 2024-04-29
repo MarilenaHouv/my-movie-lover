@@ -56,6 +56,7 @@ async function onImport(ev) {
 
 function clearClick(ev) {
     localStorage.clear();
+    location.reload();
 }
 
 populateFromLocalStorage()

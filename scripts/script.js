@@ -35,6 +35,7 @@ async function submit(){
       let reviewresp = await fetch(`https://api.themoviedb.org/3/movie/${mrespjson.results[0].id}/reviews?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${x}&language=en-US`, options);
       rrespjson = await reviewresp.json();
       let review = "";
+      // If there is at least 1 review
       if (rrespjson.results[0]) {
         review = rrespjson.results[0].content;
       }
