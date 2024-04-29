@@ -2,6 +2,7 @@ const historyList = document.getElementById("list");
 
 document.getElementById('export').addEventListener('click', exportClick)
 document.getElementById('import-form').addEventListener('submit', onImport)
+document.getElementById('clear').addEventListener('click', clearClick)
 
 // Get local storage data and put it in the history list.
 function populateFromLocalStorage() {
@@ -21,9 +22,9 @@ function addItemToList(item) {
 // Export search history as blob
 function exportClick(ev) {
     let items = JSON.parse(localStorage.getItem('items'));
-    let itemsString = JSON.stringify(items)
+    let itemsString = JSON.stringify(items);
     let download = new Blob([itemsString], { type: "application/json" });
-    let blobURL = new URLSearchParams()
+    let blobURL = new URLSearchParams();
 
     blobURL = URL.createObjectURL(download);
 
@@ -36,9 +37,9 @@ function exportClick(ev) {
 
 // Import a file and set local storage to its contents (if possible)
 async function onImport(ev) {
-    ev.preventDefault()
-    console.log('import form was submitted')
-    const importField = document.getElementById('import-file')
+    ev.preventDefault();
+    console.log('import form was submitted');
+    const importField = document.getElementById('import-file');
 
     let files = importField.files
     if (files.length < 1) {
@@ -51,4 +52,8 @@ async function onImport(ev) {
         populateFromLocalStorage();
 
     }
+}
+
+function clearClick(ev) {
+    localStorage.clear();
 }
