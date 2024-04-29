@@ -1,4 +1,6 @@
+
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
+// Get inputted text from user, query API for movie information.
 async function submit(){
     document.getElementById("movielover").src = "images/ikdkman.gif";
     let x = document.getElementById("userinput").value;
@@ -32,5 +34,16 @@ async function submit(){
       rrespjson = await reviewresp.json();
       let review = rrespjson.results[0].content;
       document.getElementById("speechbubble").textContent += review;
+      save_data(title, rating);
 }
 
+// Save movie search history to local storage
+async function save_data(title, rating) {
+  localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), search_input]));
+}
+
+
+// Update movie lover image based on rating
+function update_mood() {
+  
+}
