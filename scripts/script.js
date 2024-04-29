@@ -4,6 +4,7 @@
 async function submit(){
     document.getElementById("movielover").src = "images/ikdkman.gif";
     let x = document.getElementById("userinput").value;
+    document.getElementById("userinput").value = '';
     if (x == ""){
         alert("Invalid, type a movie name");
         return false;
@@ -45,6 +46,7 @@ async function submit(){
 
 // Save movie search history to local storage
 async function save_data(title, rating) {
+
   localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), title]));
 }
 
@@ -54,3 +56,40 @@ async function save_data(title, rating) {
 function update_mood() {
   
 }
+
+
+// submit form?
+async function sendform(){
+  let fname = document.getElementById("fname").value;
+  let lname = document.getElementById("lname").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+   // Send form data to server
+   try {
+    const response = await fetch('/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fname, lname, email, message })
+    });
+
+    if (response.ok) {
+        alert('Form submitted successfully');
+        // Clear form fields
+        document.getElementById("fname").value = '';
+        document.getElementById("lname").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("message").value = '';
+    } else {
+        alert('Form submission failed');
+    }
+} catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred while submitting the form');
+}
+  console.log(message);
+}
+
+
