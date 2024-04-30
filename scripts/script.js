@@ -10,10 +10,7 @@ async function submit(){
         alert("Invalid, type a movie name");
         return false;
     }
-    //get gif
-    let gifresp = await fetch(`http://api.giphy.com/v1/gifs/search?q=${x}&api_key=7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4&limit=5&rating=pg`);
-    let respjson = await gifresp.json();
-    document.getElementById("gifimg").src = respjson.data[0].images.original.url;   
+
     
     //get movie rating
     const options = {
@@ -31,6 +28,12 @@ async function submit(){
       document.getElementById("speechbubble").textContent = "You chose the movie <" + title + ">" +". I give it a rating of " + rating + "/10!!! ";
     
       //make itt so we fetch a review with the same rating as the average, rn its just the first review? idk
+
+      //get gif
+      // Get based on movie search result instead of user input
+      let gifresp = await fetch(`http://api.giphy.com/v1/gifs/search?q=${title}&api_key=7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4&limit=5&rating=pg`);
+      let respjson = await gifresp.json();
+      document.getElementById("gifimg").src = respjson.data[0].images.original.url;   
 
       // Leo: this throws an error if content is undefined
 
