@@ -1,3 +1,5 @@
+// List of ratings for gif selection
+const ratings = ['g', 'pg', 'pg-13', 'r', 'Any']
 
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
 // Get inputted text from user, query API for movie information.
