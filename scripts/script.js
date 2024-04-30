@@ -45,11 +45,12 @@ async function submit(){
         review = rrespjson.results[0].content;
       }
       document.getElementById("speechbubble").textContent += review;
-      save_data(title, rating);
+      save_data(title, rating, respjson.data[0].images.original.url);
 }
 
 // Save movie search history to local storage
-async function save_data(title, rating) {
+async function save_data(title, rating, gifURL) {
+  let data = [title, rating + "/10", gifURL]
   localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), title]));
 }
 
