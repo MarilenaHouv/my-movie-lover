@@ -7,21 +7,39 @@
     <meta name="viewport" content="width=device-width">
     <title>MyMovieLover</title>
     <link rel="stylesheet" href="styles/basicstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body>
     <header>
-        <h1>MyMovieLover.com</h1>
-        <nav>
-            <ul class="navlist">
-                <li class="navitem"><a href="index.html" title="link to home page">Home</a></li>
-                <li class="navitem"><a href="history.html" title="link to history page">History</a></li>
-                <li class="navitem"><a href="about.html" title="link to about page">About Him</a></li>
-                <li class="navitem"><a href="settings.html" title="link to settings page">Settings</a></li>
-                <li class="navitem"><a href="contact.html" title="link to contact page">Contact</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#"><h1>MyMovieLover.com</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html" title="link to home page">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="history.html" title="link to history page">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" title="link to about page">About Him</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="settings.html" title="link to settings page">Settings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html" title="link to contact page">Contact</a>
+              </li>
             </ul>
-        </nav>;
-    </header>
+          </div>
+        </nav>
+      </header>
 
     <main class="contactmain">
         <div class="aboutrow">
@@ -40,7 +58,7 @@
                     <label>Last Name</label>
                     <input type="text" id="lname" name="lname" placeholder="Enter last name.."><br><br>
 
-                    <label>Email</label>s
+                    <label>Email</label>
                     <input type="email" id="email" name="email" placeholder="Enter email.." required><br><br>
 
                     <label>Message</label>
@@ -61,6 +79,9 @@
     <footer>
         <p>Site created by Eleni Houvarda and Leo Torrijos</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 
