@@ -1,4 +1,5 @@
 const historyList = document.getElementById("list");
+const itemTemplate = document.getElementById("searchitem")
 
 document.getElementById('export').addEventListener('click', exportClick)
 document.getElementById('import-form').addEventListener('submit', onImport)
@@ -8,15 +9,28 @@ document.getElementById('clear').addEventListener('click', clearClick)
 function populateFromLocalStorage() {
     const items = localStorage.getItem("items");
     if (items) {
-        JSON.parse(items).forEach(addItemToList);
-}
-}
+        itemList = JSON.parse(items);
+        for (let i = 0; i < itemList.length; i++) {
+            let item = itemList[i];
+            let newLi = itemTemplate.content.cloneNode(true);
 
-// Add an item to the list of movies
-function addItemToList(item) {
-    const newLi = document.createElement("li");
-    newLi.textContent = item;
-    historyList.append(newLi);
+            newLi.querySelector("#title").textContent = item;
+
+            let deleteBtn = newLi.querySelector("#delete");
+
+            deleteBtn.addEventListener("click", function() {
+                console.log(i);
+                itemList.splice(i, 1);
+                console.log(itemList);
+                localStorage.setItem("items", JSON.stringify(itemList));
+                
+                location.reload();
+                
+            })
+            historyList.append(newLi);
+        }
+        
+    }
 }
 
 // Export search history as blob
