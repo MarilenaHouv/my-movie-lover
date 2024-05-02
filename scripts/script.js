@@ -1,3 +1,5 @@
+// List of ratings for gif selection
+const ratings = ['g', 'pg', 'pg-13', 'r', 'Any']
 
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
 // Get inputted text from user, query API for movie information.
@@ -9,10 +11,7 @@ async function submit(){
         alert("Invalid, type a movie name");
         return false;
     }
-    //get gif
-    let gifresp = await fetch(`http://api.giphy.com/v1/gifs/search?q=${x}&api_key=7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4&limit=5&rating=pg`);
-    let respjson = await gifresp.json();
-    document.getElementById("gifimg").src = respjson.data[0].images.original.url;   
+
     
     //get movie rating
     const options = {
@@ -31,6 +30,12 @@ async function submit(){
     
       //make itt so we fetch a review with the same rating as the average, rn its just the first review? idk
 
+      //get gif
+      // Get based on movie search result instead of user input
+      let gifresp = await fetch(`http://api.giphy.com/v1/gifs/search?q=${title}&api_key=7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4&limit=5&rating=pg`);
+      let respjson = await gifresp.json();
+      document.getElementById("gifimg").src = respjson.data[0].images.original.url;   
+
       // Leo: this throws an error if content is undefined
 
       let reviewresp = await fetch(`https://api.themoviedb.org/3/movie/${mrespjson.results[0].id}/reviews?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${x}&language=en-US`, options);
@@ -41,12 +46,12 @@ async function submit(){
         review = rrespjson.results[0].content;
       }
       document.getElementById("speechbubble").textContent += review;
-      save_data(title, rating);
+      save_data(title, rating, respjson.data[0].images.original.url);
 }
 
 // Save movie search history to local storage
-async function save_data(title, rating) {
-
+async function save_data(title, rating, gifURL) {
+  let data = [title, rating + "/10", gifURL]
   localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), title]));
 }
 
