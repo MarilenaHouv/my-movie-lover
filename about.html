@@ -6,28 +6,39 @@
     <meta name="viewport" content="width=device-width">
     <title>MyMovieLover</title>
     <link rel="stylesheet" href="styles/basicstyle.css">
-    <style>
-        img {
-            margin: 0;
-            padding: .5em;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 
 <body>
     <header>
-        <h1>MyMovieLover.com</h1>
-        <nav>
-            <ul class="navlist">
-                <li class="navitem"><a href="index.html" title="link to home page">Home</a></li>
-                <li class="navitem"><a href="history.html" title="link to history page">History</a></li>
-                <li class="navitem"><a href="about.html" title="link to about page">About Him</a></li>
-                <li class="navitem"><a href="settings.html" title="link to settings page">Settings</a></li>
-                <li class="navitem"><a href="contact.html" title="link to contact page">Contact</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#"><h1>MyMovieLover.com</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html" title="link to home page">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="history.html" title="link to history page">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" title="link to about page">About Him</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="settings.html" title="link to settings page">Settings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html" title="link to contact page">Contact</a>
+              </li>
             </ul>
+          </div>
         </nav>
-    </header>
+      </header>
 
     <main class="aboutmain">
         
@@ -38,9 +49,11 @@
                 movies<br>Below are a few more fun facts! if you wish to give me feedback or just want to interact reach out to me and my owners!</p>
                 
                 <!-- LINKS -->
+                <nav id="aboutnav">
                 <a href="#aboutmovlov" id="contactbutton">Who I am</a>
                 <a href="#aboutowner" id="contactbutton">Creators</a>
-                <a href="contact.html" id="contactbutton">Contact me</a>    
+                <a href="contact.html" id="contactbutton">Contact me</a>  
+                </nav>  
             </div>
             <figure>
                 <img src="/images/man.png" alt="THEMOVIELOVER" width="500px" height="650px">
@@ -88,6 +101,10 @@
     <footer>
         <p>Site created by Eleni Houvarda and Leo Torrijos</p>
     </footer>
+    <script src="scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
