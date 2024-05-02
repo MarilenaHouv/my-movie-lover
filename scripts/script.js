@@ -50,9 +50,9 @@ async function submit(){
 }
 
 // Save movie search history to local storage
-async function save_data(title, rating, gifURL) {
-  let data = [title, rating + "/10", gifURL]
-  localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), title]));
+async function save_data(title, gifURL) {
+  let data = [title, gifURL]
+  localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), data]));
 }
 
 
