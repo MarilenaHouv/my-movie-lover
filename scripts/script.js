@@ -4,7 +4,8 @@ const ratings = ['g', 'pg', 'pg-13', 'r', 'Any']
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
 // Get inputted text from user, query API for movie information.
 async function submit(){
-    document.getElementById("movielover").src = "images/ikdkman.gif";
+    // document.getElementById("movielover").src = "images/ikdkman.gif";
+
     let x = document.getElementById("userinput").value;
     document.getElementById("userinput").value = '';
     if (x == ""){
@@ -49,6 +50,7 @@ async function submit(){
       }
       document.getElementById("speechbubble").textContent += review;
       save_data(title, posterurl);
+      update_mood(rating);
 }
 
 // Save movie search history to local storage
@@ -60,7 +62,34 @@ async function save_data(title, gifURL) {
 
 
 // Update movie lover image based on rating
-function update_mood() {
+function update_mood(rating) {
+  let result = "idle";
+  switch (rating) {
+    case 0:
+    case 1:
+      result = "awful";
+      break;
+    case 2:
+      result = "bad";
+      break;
+    case 3:
+    case 4:
+      result = "low";
+      break;
+    case 5:
+    case 6:
+      result = "mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+      result = "good";
+      break;
+
+  }
+
+  document.getElementById("movielover").src = "images/guy_art/guy_" + result + ".gif";
   
 }
 
