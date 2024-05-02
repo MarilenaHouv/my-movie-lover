@@ -6,11 +6,10 @@ body {
     min-height: 100vh;
     background-color:#ffe7e72d;
 }
+
 main{
     margin:1em;
 }
-
-
 
 html {
     scroll-behavior: smooth;
@@ -41,10 +40,15 @@ h1{
     font-size: 75px;
 }
 
+/* just adds a little extra spacing to all lists */
+li{
+    margin: 1.5em;
+}
 
 * {
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
+
 
 /* nav bar  */
  
@@ -53,22 +57,22 @@ h1{
     background-color:#08415c;
 }
 
-
 /* brand and text color */
 .navbar-light .navbar-brand{
     color:#08415c !important;
 }
 
+/* color for nav item text */
 .navbar-light .navbar-nav .nav-item .nav-link{
     color:#08415c !important;
     border-radius: 12px;
 
 }
 
+/* color for when hovering over */
 .navbar-light .navbar-nav .nav-item .nav-link:hover{
     background-color: #8da98f;
 }
-
 
 /* main page layout */
 .container{
@@ -77,8 +81,8 @@ h1{
     align-items: center;
 }
 
+ /* main class layout stuff */
 .homemain{
-    /* main class */
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
@@ -88,15 +92,20 @@ h1{
 }
 
 /* images */
+
+/* main page movie character image */
 #movielover {
     float: right;
     width: 400px;
 
 }
+
+/* main page gif image */
 #gifimg{
     display: flex;
     padding-top: 1em;
 }
+
 /* container for gif when you search */
 .searchgif, #speechdiv{
     background-color:#A6B8A7;
@@ -108,19 +117,21 @@ h1{
 }
 
 /* about page */
+
+/* main on about page */ 
 .aboutmain{
-    /* main on about page */
     display: flex;
     justify-content: center;
     flex-direction: column;   
 }
 
+/* each section in about page has margins around it (3 sections) */
 section{
     margin: 3em;
 }
 
+/* switches flex to row direction */
 .aboutrow{
-    /* switches flex to row direction */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -129,12 +140,9 @@ section{
     
 }
 
-li{
-    margin: 1.5em;
-}
 
+/* box for sections in about page */
 #aboutparagraph{
-    /* box for sections in about page */
     background-color:#A6B8A7;
     padding: 5em;
     border-radius: 10px;
@@ -163,7 +171,7 @@ li{
     justify-content: space-between;
     align-items: center;
 }
-
+/* fixes layout of history names and imgs */
 #historyList{
     display: grid;
     grid-template-columns: .5fr .5fr;
