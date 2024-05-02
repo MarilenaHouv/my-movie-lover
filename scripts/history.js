@@ -1,4 +1,4 @@
-const historyList = document.getElementById("list");
+const historyList = document.getElementById("historyList");
 const itemTemplate = document.getElementById("searchitem")
 
 document.getElementById('export').addEventListener('click', exportClick)
@@ -14,8 +14,8 @@ function populateFromLocalStorage() {
             let item = itemList[i];
             let newLi = itemTemplate.content.cloneNode(true);
 
-            newLi.querySelector("#title").textContent = item;
-
+            newLi.querySelector("#title").textContent = item[0];
+            newLi.querySelector("#gifimg").src = item[1];
             let deleteBtn = newLi.querySelector("#delete");
 
             deleteBtn.addEventListener("click", function() {

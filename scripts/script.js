@@ -25,6 +25,8 @@ async function submit(){
       let movieresp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${x}&language=en-US`, options);
       let mrespjson = await movieresp.json();
       let title = mrespjson.results[0].title;
+      let posterurl = mrespjson.results[0].poster_path? `https://image.tmdb.org/t/p/w500/${mrespjson.results[0].poster_path}`: `/images/notavailable.jpg`;
+
       let rating = Math.round(mrespjson.results[0].vote_average);
       document.getElementById("speechbubble").textContent = "You chose the movie <" + title + ">" +". I give it a rating of " + rating + "/10!!! ";
     
@@ -46,7 +48,7 @@ async function submit(){
         review = rrespjson.results[0].content;
       }
       document.getElementById("speechbubble").textContent += review;
-      save_data(title, rating, respjson.data[0].images.original.url);
+      save_data(title, posterurl);
 }
 
 // Save movie search history to local storage
@@ -68,39 +70,6 @@ function thankmessage(){
   alert("Your form has been submitted, thank you for sending us a message!");
 }
 
-// submit form?
-async function sendform(){
-  let fname = document.getElementById("fname").value;
-  let lname = document.getElementById("lname").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
-
-   // Send form data to server
-   try {
-    const response = await fetch('/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ fname, lname, email, message })
-    });
-
-    if (response.ok) {
-        alert('Form submitted successfully');
-        // Clear form fields
-        document.getElementById("fname").value = '';
-        document.getElementById("lname").value = '';
-        document.getElementById("email").value = '';
-        document.getElementById("message").value = '';
-    } else {
-        alert('Form submission failed');
-    }
-} catch (error) {
-    console.error('Error:', error);
-    alert('An error occurred while submitting the form');
-}
-  console.log(message);
-}
 
 
 

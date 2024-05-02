@@ -11,9 +11,7 @@ main{
 }
 
 
-img{
-    width: 100%;
-}
+
 html {
     scroll-behavior: smooth;
 }
@@ -165,12 +163,13 @@ li{
     align-items: center;
 }
 
-#list{
+#historyList{
     display: grid;
     grid-template-columns: .5fr .5fr;
     margin:0;
 }
-#list li{
+ 
+ #historyList li{
     background-color: #08415c;
     color: white;
     padding: 1em;
