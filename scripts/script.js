@@ -62,6 +62,11 @@ function update_mood() {
   
 }
 
+//fuction for thank you message when submittin contact form
+function thankmessage(){
+  document.getElementById("contactform").reset();
+  alert("Your form has been submitted, thank you for sending us a message!");
+}
 
 // submit form?
 async function sendform(){
@@ -96,5 +101,8 @@ async function sendform(){
 }
   console.log(message);
 }
+
+
+
 
 
