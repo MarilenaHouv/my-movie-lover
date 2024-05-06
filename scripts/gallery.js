@@ -27,10 +27,15 @@ function populateFromLocalStorage() {
         itemList = JSON.parse(items);
         for (let i = 0; i < itemList.length; i++) {
             let item = itemList[i];
+            let newDiv = document.createElement("div");
             let newGIF = document.createElement("img");
+            let caption = document.createElement("h4");
+            caption.textContent = item[0];
             newGIF.src = item[2];
             newGIF.alt = item[0];
-            document.getElementById("movieGIFs").appendChild(newGIF);
+            newDiv.appendChild(newGIF);
+            newDiv.appendChild(caption);
+            document.getElementById("movieGIFs").appendChild(newDiv);
 
         }
         

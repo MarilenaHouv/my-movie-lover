@@ -248,6 +248,10 @@ section{
         max-width: 100%;
         display: inline;
     }
+    img{
+        object-fit: contain;
+        max-width: 100%;
+    }
 
   }
 

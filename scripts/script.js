@@ -4,8 +4,8 @@ const ratings = ['g', 'pg', 'pg-13', 'r', 'Any']
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
 // Get inputted text from user, query API for movie information.
 async function submit(){
-    // document.getElementById("movielover").src = "images/ikdkman.gif";
-
+    let susaudio = document.getElementById("suspense");
+    susaudio.play();
     let x = document.getElementById("userinput").value;
     document.getElementById("userinput").value = '';
     if (x == ""){
@@ -104,7 +104,15 @@ function thankmessage(){
 }
 
 
+// //sound effect?
+// const audio = new Audio("sound/bloop.mp3");
+// const buttons = document.querySelectorAll('*');
 
+// buttons.forEach(button => {
+//   button.addEventListener("click", () => {
+//     audio.play();
+//   });
+// });
 
 
 
