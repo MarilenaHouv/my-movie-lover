@@ -18,7 +18,9 @@ function populateFromLocalStorage() {
             newLi.querySelector("#gifimg").src = item[1];
             let deleteBtn = newLi.querySelector("#delete");
             let favbtn = newLi.querySelector("#favorite");
-
+            if (item[3]) {
+                favbtn.querySelector(".material-icons").style.color = "red";
+            }
             deleteBtn.addEventListener("click", function() {
                 console.log(i);
                 itemList.splice(i, 1);
@@ -29,9 +31,9 @@ function populateFromLocalStorage() {
                 
             })
 
-            favbtn.addEventListener("click", function(event){
-                let favicon = event.currentTarget.querySelector(".material-icons");
-                if (favicon.style.color === "red") {
+            favbtn.addEventListener("click", function(){
+                let favicon = this.querySelector(".material-icons");
+                if (itemList[i][3]==true) {
                     favicon.style.color = "";
                     itemList[i][3]= false;
                 } else {
@@ -39,6 +41,7 @@ function populateFromLocalStorage() {
                     itemList[i][3] = true;
                 }
                 console.log(itemList[i]);
+                localStorage.setItem("items", JSON.stringify(itemList));
             })
 
             historyList.append(newLi);
@@ -85,6 +88,7 @@ async function onImport(ev) {
 
     }
 }
+
 
 function clearClick(ev) {
     localStorage.clear();
