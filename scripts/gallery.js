@@ -57,11 +57,17 @@ function populateFromLocalStorage() {
         }
         
     } else {
-        // If no items found in localStorage, display a message
-        let missingNote = document.createElement("div");
-        missingNote.classList.add("carousel-item", "active");
-        missingNote.innerHTML = `<div class="carousel-caption"><p class="text-center">Search in Home to see some GIFs!</p></div>`;
-        document.getElementById("gallery").appendChild(missingNote);
+        let defaultItem = document.createElement("div");
+            defaultItem.classList.add("carousel-item", "active");
+            let defaultImage = document.createElement("img");
+            defaultImage.src = "images/guy_art/guy_awful.gif";
+            defaultImage.classList.add("d-block", "w-50", "mx-auto");
+            defaultItem.appendChild(defaultImage);
+            let caption = document.createElement("div");
+            caption.classList.add("carousel-caption", "text-center");
+            caption.innerHTML = "<h5>No Favorite Movies</h5>";
+            defaultItem.appendChild(caption);
+            galleryContainer.appendChild(defaultItem);
     }
 }
 

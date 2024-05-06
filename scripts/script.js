@@ -29,7 +29,7 @@ async function submit(){
       let posterurl = mrespjson.results[0].poster_path? `https://image.tmdb.org/t/p/w500/${mrespjson.results[0].poster_path}`: `/images/notavailable.jpg`;
 
       let rating = Math.round(mrespjson.results[0].vote_average);
-      document.getElementById("speechbubble").textContent = "You chose the movie <" + title + ">" +". I give it a rating of " + rating + "/10!!! ";
+      document.getElementById("speechbubble").innerHTML = "You chose the movie " + title.bold() +". I give it a rating of <b>" + rating + "/10!!!<b> ";
     
       //make itt so we fetch a review with the same rating as the average, rn its just the first review? idk
 
@@ -42,13 +42,15 @@ async function submit(){
       // Leo: this throws an error if content is undefined
 
       let reviewresp = await fetch(`https://api.themoviedb.org/3/movie/${mrespjson.results[0].id}/reviews?api_key=16e8ab249fe9f83e43bde992793f46ed&query=${x}&language=en-US`, options);
+      //https://api.themoviedb.org/3/movie/12345/reviews?api_key=16e8ab249fe9f83e43bde992793f46ed&query=incredible&language=en-US`, options);
+
       rrespjson = await reviewresp.json();
       let review = "";
       // If there is at least 1 review
       if (rrespjson.results[0]) {
         review = rrespjson.results[0].content;
       }
-      document.getElementById("speechbubble").textContent += review;
+      document.getElementById("speechbubble").innerHTML += review;
       save_data(title, posterurl, respjson.data[0].images.original.url);
       update_mood(rating);
 }
