@@ -7,7 +7,7 @@
   <title>MyMovieLover</title>
   <link rel="stylesheet" href="styles/basicstyle.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
     <button id="clear" type="button">Clear History</button>
     <button id="export" type="button">Export History</button>
     <form action="#" id="import-form">
-      <button id="import" type="submit">Import History</button>
+      <label for="import-file"><button id="import" type="submit">Import History</button></label>
       <input type="file" name="import-file" id="import-file">
     </form>
     <div class="aboutparagraph">
@@ -67,7 +67,7 @@
     <div id="itemDisplay">
       <img id="gifimg" width="200px" src="images\notavailable.jpg" alt="movie GIF">
       <p id="title">Name</p>
-      <button id="favorite" type="button">Favorite</button>
+      <button id="favorite" type="button">Favorite<i id= "favicon" class="material-icons">favorite</i></button>
       <button id="delete" type="button">Delete</button>
     </div>
   </template>

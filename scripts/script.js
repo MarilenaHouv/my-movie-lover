@@ -59,7 +59,7 @@ async function submit(){
 // [title, poster URL, gifURL]
 //
 async function save_data(title, posterURL, gifURL) {
-  let data = [title, posterURL, gifURL]
+  let data = [title, posterURL, gifURL, false]
   localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), data]));
 }
 

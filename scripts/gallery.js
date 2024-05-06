@@ -1,48 +1,49 @@
-// // add image to carousel
-
-
-// const carouselInner = document.getElementsByClassName("carousel-inner");
-// const galTemplate = document.getElementById("carouseltemp");
-// function getfromStorage(){
-//     const items = localStorage.getItem("items");
-//         if(items){
-//             itemList = JSON.parse(items);
-//             for (let i = 0; i < itemList.length; i++) {
-//                         let item = itemList[i];
-//                         let newItem = galTemplate.content.cloneNode(true);
-//                         newItem.querySelector("#galleryimg").src = item[1];
-//                         newItem.querySelector("#gallerycaption").textContent = item[0];
-//                         carouselInner.append(newItem);
-
-//              }
-//         }
-// }
-
-// getfromStorage();
-
-// Get local storage data and put it in the history list.
 function populateFromLocalStorage() {
     const items = localStorage.getItem("items");
     if (items) {
         itemList = JSON.parse(items);
+        const galleryContainer = document.querySelector("#gallery .carousel-inner");
+        
         for (let i = 0; i < itemList.length; i++) {
             let item = itemList[i];
-            let newDiv = document.createElement("div");
+           
+            
+            // create a new carousel item
+            let carouselItem = document.createElement("div");
+            carouselItem.classList.add("carousel-item");
+
+            // first item is active
+            if (i === 0) {
+                carouselItem.classList.add("active");
+            }
+            
+            // create image
             let newGIF = document.createElement("img");
-            let caption = document.createElement("h4");
-            caption.textContent = item[0];
             newGIF.src = item[2];
             newGIF.alt = item[0];
-            newDiv.appendChild(newGIF);
-            newDiv.appendChild(caption);
-            document.getElementById("movieGIFs").appendChild(newDiv);
-
+            newGIF.classList.add("d-block", "w-100");
+            
+            // append image to carousel
+            carouselItem.appendChild(newGIF);
+            
+            // caption element
+            let caption = document.createElement("div");
+            caption.classList.add("carousel-caption", "text-center");
+            caption.innerHTML = `<h5>${item[0]}</h5>`; // Assuming item[0] contains the caption
+            
+            // add caption
+            carouselItem.appendChild(caption);
+            
+            // add carousel item to carousel container
+            galleryContainer.appendChild(carouselItem);
         }
         
     } else {
-        let missingNote = document.createElement("p");
-        missingNote.textContent = "Search in Home to see some GIFs!";
-        document.getElementById("movieGIFs").appendChild(missingNote);
+        // If no items found in localStorage, display a message
+        let missingNote = document.createElement("div");
+        missingNote.classList.add("carousel-item", "active");
+        missingNote.innerHTML = `<div class="carousel-caption"><p class="text-center">Search in Home to see some GIFs!</p></div>`;
+        document.getElementById("gallery").appendChild(missingNote);
     }
 }
 

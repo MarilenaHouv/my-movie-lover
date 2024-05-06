@@ -6,7 +6,9 @@ body {
     min-height: 100vh;
     background-color:#ffe7e72d;
 }
-
+a:link{
+    color:#08415c
+}
 main{
     margin:1em;
 }
@@ -208,6 +210,13 @@ section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.carousel-caption{
+ 
+    background-color:#08415c;
+    padding:0;
+
 }
 
 /* different layout for size  */

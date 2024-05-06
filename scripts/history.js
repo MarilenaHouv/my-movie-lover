@@ -17,6 +17,7 @@ function populateFromLocalStorage() {
             newLi.querySelector("#title").textContent = item[0];
             newLi.querySelector("#gifimg").src = item[1];
             let deleteBtn = newLi.querySelector("#delete");
+            let favbtn = newLi.querySelector("#favorite");
 
             deleteBtn.addEventListener("click", function() {
                 console.log(i);
@@ -27,6 +28,19 @@ function populateFromLocalStorage() {
                 location.reload();
                 
             })
+
+            favbtn.addEventListener("click", function(event){
+                let favicon = event.currentTarget.querySelector(".material-icons");
+                if (favicon.style.color === "red") {
+                    favicon.style.color = "";
+                    itemList[i][3]= false;
+                } else {
+                    favicon.style.color = "red";
+                    itemList[i][3] = true;
+                }
+                console.log(itemList[i]);
+            })
+
             historyList.append(newLi);
         }
         
