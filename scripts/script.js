@@ -49,13 +49,17 @@ async function submit(){
         review = rrespjson.results[0].content;
       }
       document.getElementById("speechbubble").textContent += review;
-      save_data(title, posterurl);
+      save_data(title, posterurl, respjson.data[0].images.original.url);
       update_mood(rating);
 }
 
 // Save movie search history to local storage
-async function save_data(title, gifURL) {
-  let data = [title, gifURL]
+// 
+// DATA:
+// [title, poster URL, gifURL]
+//
+async function save_data(title, posterURL, gifURL) {
+  let data = [title, posterURL, gifURL]
   localStorage.setItem('items', JSON.stringify([...JSON.parse(localStorage.getItem('items') ?? '[]'), data]));
 }
 

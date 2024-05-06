@@ -84,21 +84,21 @@ li{
  /* main class layout stuff */
 .homemain{
     display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
     padding: 1em;
 
 }
 
-/* images */
-
-/* main page movie character image */
-#movielover {
-    float: right;
-    width: 400px;
-
+/* Contains search bar and movie lover gif */
+#topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+/* images */
 
 /* main page gif image */
 #gifimg{
@@ -108,13 +108,24 @@ li{
 
 /* container for gif when you search */
 .searchgif, #speechdiv{
+    display: flex;
+    flex-direction: column;
+    
+
     background-color:#A6B8A7;
     color: #08415c;
     margin: 1em;
-    padding: 5em;
+    padding: 2em;
     border-radius: 10px;
     box-shadow: 10px 10px 5px #69746d;    
 }
+
+/* For speech bubble */
+#speechbubble {
+    text-align: center;
+}
+
+
 
 /* about page */
 
@@ -122,7 +133,7 @@ li{
 .aboutmain{
     display: flex;
     justify-content: center;
-    flex-direction: column;   
+    flex-direction: column;
 }
 
 /* each section in about page has margins around it (3 sections) */
@@ -142,7 +153,7 @@ section{
 
 
 /* box for sections in about page */
-#aboutparagraph{
+.aboutparagraph{
     background-color:#A6B8A7;
     padding: 5em;
     border-radius: 10px;
@@ -162,6 +173,12 @@ section{
   button:hover, #contactbutton:hover{
     background-color: #1574a1;
   }
+
+/* about creators image */
+#aboutimg {
+    display: flex;
+    justify-content: center;
+}
 
 
 /* contact page */
@@ -185,8 +202,16 @@ section{
     border-radius: 10px;
 }
 
+/* Gallery style */
+
+#movieGIFs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* different layout for size  */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .navlist{
         display: flex;
         justify-content: space-between;
@@ -197,6 +222,14 @@ section{
         font-size: 40px;
     }
 
+    .homemain {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #topbar {
+        flex-direction: column;
+    }
     .aboutrow {
         flex-direction: column;
         align-items: center;

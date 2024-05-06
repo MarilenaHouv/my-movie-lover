@@ -32,9 +32,9 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html" title="link to about page">About Him</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="settings.html" title="link to settings page">Settings</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html" title="link to contact page">Contact</a>
           </li>
@@ -44,20 +44,19 @@
   </header>
 
   <main>
+    <button id="clear" type="button">Clear History</button>
+    <button id="export" type="button">Export History</button>
     <form action="#" id="import-form">
-      <label for="import-file">Import History</label>
+      <button id="import" type="submit">Import History</button>
       <input type="file" name="import-file" id="import-file">
-      <button id="import" type="submit">Import</button>
     </form>
-    <div id="aboutparagraph">
+    <div class="aboutparagraph">
       <h3>Search History</h3>
       <div id="historyList">
         <!-- might want to add something for when there is no previous searches -->
       </div>
       <div id="downloads"></div>
     </div>
-    <button id="clear" type="button">Clear History</button>
-    <button id="export" type="button">Export History</button>
   </main>
 
   <footer>
@@ -66,7 +65,7 @@
 
   <template id="searchitem">
     <div id="itemDisplay">
-      <img id="gifimg" width="200px" src=""></img>
+      <img id="gifimg" width="200px" src="images\notavailable.jpg" alt="movie GIF">
       <p id="title">Name</p>
       <button id="favorite" type="button">Favorite</button>
       <button id="delete" type="button">Delete</button>

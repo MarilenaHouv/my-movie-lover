@@ -19,3 +19,22 @@
 // }
 
 // getfromStorage();
+
+// Get local storage data and put it in the history list.
+function populateFromLocalStorage() {
+    const items = localStorage.getItem("items");
+    if (items) {
+        itemList = JSON.parse(items);
+        for (let i = 0; i < itemList.length; i++) {
+            let item = itemList[i];
+            let newGIF = document.createElement("img");
+            newGIF.src = item[2];
+            newGIF.alt = item[0];
+            document.getElementById("movieGIFs").appendChild(newGIF);
+
+        }
+        
+    }
+}
+
+populateFromLocalStorage();

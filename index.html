@@ -12,7 +12,9 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#"><h1>MyMovieLover.com</h1></a>
+      <a class="navbar-brand" href="#">
+        <h1>MyMovieLover.com</h1>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,9 +33,9 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html" title="link to about page">About Him</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="settings.html" title="link to settings page">Settings</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html" title="link to contact page">Contact</a>
           </li>
@@ -43,22 +45,30 @@
   </header>
   <main class="homemain">
 
-    <!-- implement a search bar -->
-    <div class="searchgif">
-      <h2>Try me out!<br>Enter a movie name:</h2>
+    <div id="topbar">
+      <!-- implement a search bar -->
+      <div class="searchgif">
+        <h2>Try me out!<br>Enter a movie name:</h2>
 
-      <div>
-        <input id="userinput" type="text" placeholder="Search.." name="search">
-        <button id="contactbutton" onclick="submit()" type="submit">SUBMIT</button>
+        <div>
+          <input id="userinput" type="text" placeholder="Search.." name="search">
+          <button id="contactbutton" onclick="submit()" type="submit">SUBMIT</button>
+        </div>
+        <img id="gifimg" src="images\whiteimage.avif" alt="gif image" height="200px">
+
       </div>
-      <img id="gifimg" src="images\whiteimage.avif" alt="gif image" width="600px">
+      <!-- GIF of Movie Lover -->
+      <div>
+        <img id="movielover" src="images/guy_art/guy_idle.gif" alt="a picture of movie lover">
+      </div>
+
+
     </div>
-    <div id="speechdiv">
-    <p id="speechbubble">Give me a movie and I will rate it!</p>
-    </div>
-    <div id="movieimgdiv">
-      <img id="movielover" src="images/guy_art/guy_idle.gif" alt="a picture of movie lover">
-    </div>
+
+        <!-- speech -->
+        <div id="speechdiv">
+          <p id="speechbubble">Give me a movie and I will rate it!</p>
+        </div>
 
   </main>
   <footer>
