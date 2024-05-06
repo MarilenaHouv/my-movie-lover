@@ -34,6 +34,10 @@ function populateFromLocalStorage() {
 
         }
         
+    } else {
+        let missingNote = document.createElement("p");
+        missingNote.textContent = "Search in Home to see some GIFs!";
+        document.getElementById("movieGIFs").appendChild(missingNote);
     }
 }
 

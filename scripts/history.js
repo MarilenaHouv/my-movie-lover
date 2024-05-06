@@ -30,6 +30,10 @@ function populateFromLocalStorage() {
             historyList.append(newLi);
         }
         
+    } else {
+        let missingNote = document.createElement("p");
+        missingNote.textContent = "Search a movie in Home, or import history from a file!";
+        historyList.appendChild(missingNote);
     }
 }
 
