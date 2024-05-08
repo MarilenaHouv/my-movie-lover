@@ -4,8 +4,7 @@ const ratings = ['g', 'pg', 'pg-13', 'r', 'Any']
 // let gifapi = "7FcrCZUTeZ4HSqxtoMcCVZlHiUnw2iz4";
 // Get inputted text from user, query API for movie information.
 async function submit(){
-    let susaudio = document.getElementById("suspense");
-    susaudio.play();
+
     let x = document.getElementById("userinput").value;
     document.getElementById("userinput").value = '';
     if (x == ""){
@@ -82,33 +81,47 @@ async function save_data(title, posterURL, gifURL) {
 // Update movie lover image based on rating
 function update_mood(rating) {
   let result = "idle";
+  let sounds = [document.getElementById("suspense"), document.getElementById("boomer"), document.getElementById("bloop"), document.getElementById("poot")];
+  let audio = sounds[0]
+  
   switch (rating) {
     case 0:
     case 1:
       result = "awful";
       break;
     case 2:
-      result = "bad";
-      break;
     case 3:
+      result = "bad";
+      audio = sounds[1];
+      break;
     case 4:
-      result = "low";
-      break;
     case 5:
-    case 6:
-      result = "mid";
+      result = "low";
+      audio = sounds[3]
       break;
+    case 6:
     case 7:
+      result = "mid";
+      audio = sounds[2]
+      break;
     case 8:
     case 9:
     case 10:
       result = "good";
+      audio = sounds[2]
       break;
 
   }
-
-  document.getElementById("movielover").src = "images/guy_art/guy_" + result + ".gif";
   
+  
+  document.getElementById("movielover").src = "images/guy_art/guy_" + result + ".gif";
+  sounds.forEach((sound) => (resetSound(sound)));
+  audio.play();
+}
+
+function resetSound(sound) {
+  sound.pause();
+  sound.currentTime = 0;
 }
 
 //fuction for thank you message when submittin contact form
