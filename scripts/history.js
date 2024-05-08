@@ -84,7 +84,7 @@ async function onImport(ev) {
         let contents = await thatFile.text();
 
         localStorage.setItem("items", contents);
-        populateFromLocalStorage();
+        location.reload();
 
     }
 }
