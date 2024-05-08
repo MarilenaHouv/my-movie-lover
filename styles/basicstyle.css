@@ -1,16 +1,18 @@
 /* main elements */
+
 body {
     display: flex;
     flex-direction: column;
     margin: 20px;
     min-height: 100vh;
-    background-color:#ffe7e72d;
+    background-color:#f7f4ea ;
 }
 a:link{
     color:#08415c
 }
 main{
     margin:1em;
+
 }
 
 html {

@@ -1,8 +1,9 @@
 function populateFromLocalStorage() {
     const items = localStorage.getItem("items");
+
     if (items) {
         itemList = JSON.parse(items);
-        const galleryContainer = document.querySelector("#gallery .carousel-inner");
+        let galleryContainer = document.querySelector("#gallery .carousel-inner");
         let firstitemcount = 0;
         for (let i = 0; i < itemList.length; i++) {
             let item = itemList[i];
@@ -57,7 +58,11 @@ function populateFromLocalStorage() {
         }
         
     } else {
-        let defaultItem = document.createElement("div");
+            const galleryContainer = document.querySelector("#gallery .carousel-inner");
+            let carouselItem = document.createElement("div");
+            carouselItem.classList.add("carousel-item");
+            carouselItem.classList.add("active");
+            let defaultItem = document.createElement("div");
             defaultItem.classList.add("carousel-item", "active");
             let defaultImage = document.createElement("img");
             defaultImage.src = "images/guy_art/guy_awful.gif";
