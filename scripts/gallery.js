@@ -25,7 +25,7 @@ function populateFromLocalStorage() {
                 let newGIF = document.createElement("img");
                 newGIF.src = item[2];
                 newGIF.alt = item[0];
-                newGIF.classList.add("d-block", "w-100");
+                newGIF.classList.add("d-block");
                 
                 // append image to carousel
                 carouselItem.appendChild(newGIF);

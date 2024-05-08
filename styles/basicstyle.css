@@ -1,9 +1,18 @@
 /* main elements */
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
 .carousel-item{
-    height: 400px;
+    height: 500px;
+    width: 00px;
+
 }
 .carousel-item img{
-    height: 400px;
+    height: 500px;
+    width: 800px;
+    overflow: hidden;
+    margin: auto;
 }
 body {
     display: flex;
