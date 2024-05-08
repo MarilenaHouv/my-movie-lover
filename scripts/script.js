@@ -125,10 +125,17 @@ function resetSound(sound) {
 }
 
 //fuction for thank you message when submittin contact form
-function thankmessage(){
-  document.getElementById("contactform").reset();
-  alert("Your form has been submitted, thank you for sending us a message!");
-}
+// function thankmessage(){
+//   alert("Your form has been submitted, thank you for sending us a message!");
+
+//   document.getElementById("contactform").reset();
+// }
+// document.getElementById("contactform").addEventListener("submit", function(event) {
+//   // Prevent the default form submission
+//   alert("Your form has been submitted, thank you for sending us a message!");
+//   event.target.reset();  
+// });
+
 
 
 // //sound effect?
