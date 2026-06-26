@@ -9,4 +9,4 @@
 - TMDB: https://api.themoviedb.org
 
 ## Website link: 
-https://wanghci.github.io/project-milestone-2-movielover/gallery.html 
+https://wanghci.github.io/project-milestone-2-movielover/index.html
